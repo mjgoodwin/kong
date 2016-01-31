@@ -3,6 +3,8 @@ class Hero
     @image     = Gosu::Image.new("media/marioRightMove1.jpg")
     @x         = 100
     @y         = 449
+    @x_vel     = 0
+    @y_vel     = 0
     @hang_time = 0
   end
 
@@ -13,24 +15,34 @@ class Hero
   def update
     if @hang_time > 0
       if @hang_time > 10
-        @y = @y - 2
+        @y_vel = -2
       else
-        @y = @y + 2
+        @y_vel = 2
       end
       @hang_time = @hang_time - 1
     end
+
+    if @x < 92 && @x_vel < 0
+      @x_vel = 0
+    end
+
+    if @x > 552 && @x_vel > 0
+      @x_vel = 0
+    end
+
+    @x = @x + @x_vel
+    @y = @y + @y_vel
+
+    @x_vel = 0
+    @y_vel = 0
   end
 
   def move_left
-    if @x > 91
-      @x = @x - 5
-    end
+    @x_vel = -5
   end
 
   def move_right
-    if @x < 551
-      @x = @x + 5
-    end
+    @x_vel = 5
   end
 
   def jump
