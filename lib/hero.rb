@@ -20,4 +20,8 @@ class Hero
       @x = @x + 5
     end
   end
+
+  def jump
+    @y = @y - 5
+  end
 end

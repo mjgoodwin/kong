@@ -15,8 +15,13 @@ class GameWindow < Gosu::Window
     if Gosu::button_down? Gosu::KbLeft
       @hero.move_left
     end
+
     if Gosu::button_down? Gosu::KbRight
       @hero.move_right
+    end
+
+    if Gosu::button_down? Gosu::KbSpace
+      @hero.jump
     end
   end
 
