@@ -23,6 +23,8 @@ class GameWindow < Gosu::Window
     if Gosu::button_down? Gosu::KbSpace
       @hero.jump
     end
+
+    @hero.update
   end
 
   def draw
