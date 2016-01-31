@@ -119,5 +119,4 @@ class Hero
       @y_vel = 2
     end
   end
-
 end
