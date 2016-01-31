@@ -12,6 +12,12 @@ class GameWindow < Gosu::Window
   end
 
   def update
+    if Gosu::button_down? Gosu::KbLeft
+      @hero.move_left
+    end
+    if Gosu::button_down? Gosu::KbRight
+      @hero.move_right
+    end
   end
 
   def draw
