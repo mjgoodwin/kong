@@ -107,4 +107,17 @@ class Hero
       @hang_time = 20
     end
   end
+
+  def climb_up
+    unless floating?
+      @y_vel = -2
+    end
+  end
+
+  def climb_down
+    unless floating?
+      @y_vel = 2
+    end
+  end
+
 end
